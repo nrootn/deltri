@@ -1,0 +1,6 @@
+# Output from PinnacleROI.cpp
+# First line is number of curves
+# Second line is space-separated number of points in each curve
+# Remainder are the points themselves
+0
+
