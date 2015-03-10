@@ -4,8 +4,10 @@ use warnings;
 use Getopt::Long;
 
 my $input_file;
+my $regionID;
 # -i input file
-GetOptions("input|i=s" => \$input_file
+GetOptions("input|i=s"  => \$input_file,
+		   "region|r=i" => \$regionID
 	);
 
 # Open input file
@@ -40,7 +42,6 @@ print NODE "$total_nodes 3 0 1\n";
 print NODE "# node index, node coordinates\n";
 
 my $i = 1;
-my $regionID = 1;
 foreach my $nodes (@nodes) {
 	for (my $j = 0; $j < $nodes; $j++) {
 		my $line = <ROI>;
@@ -48,7 +49,6 @@ foreach my $nodes (@nodes) {
 		print NODE "$i $line $regionID\n";
 		$i++;
 	}
-	$regionID++;
 }
 
 close(ROI);
